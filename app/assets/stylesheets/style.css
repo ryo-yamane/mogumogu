@@ -415,6 +415,8 @@ embed {
 img {
   display: inline-block;
   vertical-align: middle;
+  width: 100%;
+  height: 50vh;
 }
 
 textarea {
@@ -701,6 +703,7 @@ form input[type="submit"] {
   -o-transition-timing-function: linear;
   -webkit-transition-timing-function: linear;
   transition-timing-function: linear;
+
 }
 
 .btn,
@@ -999,6 +1002,7 @@ form input[type="submit"] {
   color: #fff;
   border: 0;
   font-size: 18px;
+  margin-top: 20px;
 }
 
 form input[type="submit"]:hover {
