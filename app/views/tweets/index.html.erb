@@ -1,12 +1,16 @@
-<div class="contents row">
-  <% @tweets.each do |tweet| %>
-    <div class="content_post" style="background-image: url(<%= tweet.image %>);">
-     
-    </div>
 
-    <div class='item-info'>
+  <% @tweets.each do |tweet| %>
+  <div class="contents row">
+      <div class="post-all">
+       <%= link_to "#", class: 'item-img' do  %>
+          <%= image_tag tweet.image   ,class: "content_post" %>
+          
+       <% end %>
+
+        <div class='item-info'>
           <h3 class='item-name'>
             <%= link_to "#{tweet.name}", "#", method: :get %>
+            
           </h3>
           <div class='item-price'>
             <span><%= link_to "#{tweet.price}円" %><br>
@@ -17,6 +21,8 @@
             </div>
           </div>
         </div>
+      </div>
+     </div>
+    </div>
     
   <% end %>
-</div>
