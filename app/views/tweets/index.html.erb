@@ -1,0 +1,22 @@
+<div class="contents row">
+  <% @tweets.each do |tweet| %>
+    <div class="content_post" style="background-image: url(<%= tweet.image %>);">
+     
+    </div>
+
+    <div class='item-info'>
+          <h3 class='item-name'>
+            <%= link_to "#{tweet.name}", "#", method: :get %>
+          </h3>
+          <div class='item-price'>
+            <span><%= link_to "#{tweet.price}円" %><br>
+            <%= link_to "#{tweet.category_id}" , "#", method: :get %></span>
+            <div class='star-btn'>
+              <%= image_tag "star.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+    
+  <% end %>
+</div>

@@ -1,0 +1,28 @@
+<table class="detail-table">
+      <tbody>
+        <tr>
+          <%# <th class="detail-item">出品者</th> %>
+           <td class="detail-value"><%= "#{tweet.name}" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= "#{tweet.category_id}" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">食感</th>
+          <td class="detail-value"><%= "#{tweet.texture_id}" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">製造会社</th>
+          <td class="detail-value"><%= "#{tweet.company_id}" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">値段</th>
+          <td class="detail-value"><%= "#{tweet.price}" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">JANコード</th>
+          <td class="detail-value"><%= "#{tweet.jan_code}" %></td>
+        </tr>
+      </tbody>
+ </table>
