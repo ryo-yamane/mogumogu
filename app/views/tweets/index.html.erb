@@ -8,7 +8,7 @@
 
              <ul class="more_list">
               <li class="lint-content">
-               <%= link_to '編集', tweet_path(tweet.id) %>
+               <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
                <%= link_to '削除', tweet_path(tweet.id) , method: :delete%>
               </li>
              </ul>
