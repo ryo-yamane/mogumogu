@@ -9,13 +9,16 @@ class TweetsController < ApplicationController
   end
  
   def create
-
     @tweet = Tweet.new(tweet_params)
     unless @tweet.save
       render :new
     end
   end
 
+  def destroy
+    tweet = Tweet.find(params[:id])
+    tweet.destroy
+  end
 
   private
 
