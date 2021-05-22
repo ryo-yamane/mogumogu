@@ -1,28 +1,86 @@
+<div class="contents row">
+      <div class="post-all">
+        <div class="contents-header">
+          <%= link_to "ユーザー名", "#"%>
+           <div class="more">
+
+             <ul class="more_list">
+              <li class="lint-content">
+                <%= link_to '編集', edit_tweet_path(@tweet.id), method: :get %>
+                <%= link_to '削除', tweet_path(@tweet.id) , method: :delete%>
+              </li>
+             </ul>
+           </div>
+       </div>
+        <%= link_to tweet_path(@tweet.id), class: 'item-img' do  %>
+          <%= image_tag @tweet.image   ,class: "content_post" %>
+        <% end %>  
+      
+       </div>
+
+
 <table class="detail-table">
       <tbody>
         <tr>
-          <%# <th class="detail-item">出品者</th> %>
-           <td class="detail-value"><%= "#{tweet.name}" %></td>
+           <th class="detail-item">商品名</th>
+           <td class="detail-value"><%= "#{@tweet.name}" %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= "#{tweet.category_id}" %></td>
+          <td class="detail-value"><%= "#{@tweet.category.name}" %></td>
         </tr>
         <tr>
           <th class="detail-item">食感</th>
-          <td class="detail-value"><%= "#{tweet.texture_id}" %></td>
+          <td class="detail-value"><%= "#{@tweet.texture.name}" %></td>
         </tr>
         <tr>
           <th class="detail-item">製造会社</th>
-          <td class="detail-value"><%= "#{tweet.company_id}" %></td>
+          <td class="detail-value"><%= "#{@tweet.company.name}" %></td>
         </tr>
         <tr>
           <th class="detail-item">値段</th>
-          <td class="detail-value"><%= "#{tweet.price}" %></td>
+          <td class="detail-value"><%= "#{@tweet.price}円" %></td>
         </tr>
         <tr>
           <th class="detail-item">JANコード</th>
-          <td class="detail-value"><%= "#{tweet.jan_code}" %></td>
+          <td class="detail-value"><%= "#{@tweet.jan_code}" %></td>
         </tr>
       </tbody>
  </table>
+
+ <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>お気に入り 0</span>
+      </div>
+      <div class="report-btn">
+        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
+        <span>不適切な商品の通報</span>
+      </div>
+ </div>
+
+ <div class="comment-box">
+    <form>
+      <textarea class="comment-text"></textarea>
+      <p class="comment-warn">
+        相手のことを考え丁寧なコメントを心がけましょう。
+        <br>
+        不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      </p>
+      <button type="submit" class="comment-btn">
+        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+        <span>コメントする<span>
+      </button>
+    </form>
+  </div>
+  <div class="links">
+    <a href="#" class="change-item-btn">
+      ＜ 前の商品
+    </a>
+    <a href="#" class="change-item-btn">
+      後ろの商品 ＞
+    </a>
+  </div>
+  
+ 
+</div>

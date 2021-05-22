@@ -412,12 +412,7 @@ embed {
   -webkit-font-smoothing: antialiased;
 }
 
-img {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100%;
-  height: 50vh;
-}
+
 
 textarea {
   height: auto;
@@ -1064,7 +1059,7 @@ footer p {
 
 .detail-table {
   margin-bottom: 30px;
-  width: 100%;
+  width: 106%;
 }
 
 .detail-item {

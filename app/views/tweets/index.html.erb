@@ -14,19 +14,19 @@
              </ul>
            </div>
        </div>
-       <%= link_to "#", class: 'item-img' do  %>
+       <%= link_to tweet_path(tweet.id), class: 'item-img' do  %>
           <%= image_tag tweet.image   ,class: "content_post" %>
           
        <% end %>
 
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= link_to "商品名：#{tweet.name}", "#", method: :get %>
+            <%= link_to "商品名：#{tweet.name}", tweet_path(tweet.id), method: :get %>
             
           </h3>
           <div class='item-price'>
             <span><%= link_to "商品価格：#{tweet.price}円" %><br>
-            <%= link_to "カテゴリ：#{tweet.category_id}" , "#", method: :get %></span>
+            <%= link_to "カテゴリ：#{tweet.category.name}" , tweet_path(tweet.id), method: :get %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>
