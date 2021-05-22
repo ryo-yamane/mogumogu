@@ -2,6 +2,18 @@
   <% @tweets.each do |tweet| %>
   <div class="contents row">
       <div class="post-all">
+        <div class="contents-header">
+          <%= link_to "ユーザー名", "#"%>
+           <div class="more">
+
+             <ul class="more_list">
+              <li class="lint-content">
+               <%= link_to '編集', tweet_path(tweet.id) %>
+               <%= link_to '削除', tweet_path(tweet.id) , method: :delete%>
+              </li>
+             </ul>
+           </div>
+       </div>
        <%= link_to "#", class: 'item-img' do  %>
           <%= image_tag tweet.image   ,class: "content_post" %>
           
@@ -9,12 +21,12 @@
 
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= link_to "#{tweet.name}", "#", method: :get %>
+            <%= link_to "商品名：#{tweet.name}", "#", method: :get %>
             
           </h3>
           <div class='item-price'>
-            <span><%= link_to "#{tweet.price}円" %><br>
-            <%= link_to "#{tweet.category_id}" , "#", method: :get %></span>
+            <span><%= link_to "商品価格：#{tweet.price}円" %><br>
+            <%= link_to "カテゴリ：#{tweet.category_id}" , "#", method: :get %></span>
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>

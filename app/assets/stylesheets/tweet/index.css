@@ -4,6 +4,18 @@
   padding: 1vw;
 }
 
+.contents-header{
+  background-color: snow;
+    padding: 10px;
+    margin-bottom: auto;
+    justify-content: space-between;
+    display: flex;
+}
+
+.list-content{
+  display: inline;
+  
+}
 
 
 .post-all{
