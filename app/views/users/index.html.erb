@@ -1,0 +1,54 @@
+
+
+<div class="registration-main">
+  <div class="form-wrap">
+  <div class="aaa">
+    <div class='form-header'>
+       <h1 class='form-header-text'>
+         新規会員登録
+       </h1>
+    </div>
+  
+     <div class="form-group-registration">
+      <div class='form-text-wrap'>
+        <div class="form-text-registration">
+          <%= link_to new_user_registration_path, class:"btn btn-c btn--green btn--cubic mail" do %>
+          <i class="bi bi-symmetry-horizontal"></i>
+          <span>メールアドレスで登録</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group-registration">
+      <div class='form-text-wrap'>
+        <div class="form-text-registration">
+          <%# <%= link_to user_facebook_omniauth_authorize_path, method: :post, class:"btn btn-c btn--green btn--cubic facebook" do %> %>
+            <i class="bi bi-facebook"></i>
+            <span>facebookで登録</span>
+          <%# <% end %> %>
+        </div>
+      </div>    
+    </div>
+
+      <div class="form-group-registration">
+        <div class='form-text-wrap'>
+          <div class="form-text-registration">
+          <%# <%= link_to  user_google_oauth2_omniauth_authorize_path, method: :post, class:"btn btn-c btn--green btn--cubic google" do %> %>
+           <i class="bi bi-google"></i>
+           <span>Googleで登録</span>
+          <%# <% end %> %>
+        </div>
+       </div>
+     </div> 
+     <div class="form-group-sentence">
+      <p>登録することで、
+      <a href="#" >利用規約</a>
+      と
+      <a href="#" >プライバシーポリシー</a>
+      に同意したものとみなされます。
+       </p>
+     </div>
+    </div>
+  </div>
+</div>
