@@ -3,13 +3,18 @@
   <div class="contents row">
       <div class="post-all">
         <div class="contents-header">
-          <%= link_to "ユーザー名", "#"%>
+           <%= link_to "#{tweet.user.nickname}" , user_path(tweet.user.id)%>
            <div class="more">
 
              <ul class="more_list">
               <li class="lint-content">
+              <% if user_signed_in? && current_user == tweet.user%>
                <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
                <%= link_to '削除', tweet_path(tweet.id) , method: :delete%>
+               <% else %>
+                <%= link_to '詳細', tweet_path(tweet.id), method: :get %>
+
+               <% end %>
               </li>
              </ul>
            </div>
