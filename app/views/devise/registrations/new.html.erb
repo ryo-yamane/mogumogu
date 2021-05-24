@@ -52,10 +52,20 @@
   </div>
 
   <div class="weight-bold-text">
-          発送元の地域
+          住所（都道府県）
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:consignor_area_id, ConsignorArea.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box1", id:"item-prefecture"}) %>
+
+        <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">住所（市町村）</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :city_town, class:"input-name1", id:"last-name-kana", placeholder:"例) 新宿区" %>
+    </div>
+  </div>
 
   <div class="form-group">
     <div class='form-text-wrap'>
