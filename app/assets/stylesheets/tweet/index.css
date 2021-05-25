@@ -1,15 +1,89 @@
+/* header部分 */
+.header{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.row1{
+  margin-top: 2px;
+}
+
+.header-search{
+  width: 30vh;
+}
+.grid-5{
+ font-size: 26px;
+ font-weight: bold;
+}
+
+
+.post1{
+  padding: 8px 20px;
+  font-size: 14px;
+  border: 2px solid #57C3E9;
+  color: #57C3E9;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.search-form1{
+  display: flex;
+}
+.search-input1{
+  width: 32vh;
+  height: fit-content;
+  padding: 4px 20px;
+  margin-top: 5px;
+  
+}
+
+.search-btn1{
+  padding: 0px 10px 0px 10px!important;
+    margin-top: 5px!important;
+    margin-left: 3px!important;
+    border-radius: 3px!important;
+    font-size: 14px!important;
+}
+/* headerここまで */
+/* contents */
+
+.inner {
+  width: 1130px;
+    margin: 11px auto;
+    background-color: #fff;
+}
+.row {
+  width: calc((100% - 200px) / 3);
+}
+
+.post-all{
+  width: 100%;
+  margin: 10px;
+}
+
+.card-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: calc(100vh - 161px);
+}
 .item-info {
-  background-color: #FFF;
+  background-color: snow;
   color: black;
   padding: 1vw;
 }
 
 .contents-header{
-  background-color: snow;
+    width: 300px;
+    background-color: snow;
     padding: 10px;
     margin-bottom: auto;
     justify-content: space-between;
     display: flex;
+    font-size: 13px;
 }
 
 .list-content{
@@ -24,19 +98,19 @@
 }
 
 .content_post{
-    display: inline-block;
-    vertical-align: middle;
-    width: 100%;
-    height: 50vh;
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+  height: 200px;
 }
 
 
 .item-name {
-  font-size: 2.5vh;
+  font-size: 1vh;
 }
 
 .item-price {
-  font-size: 1.5vh;
+  font-size: 1vh;
   display: flex;
   justify-content: space-between;
 }
@@ -56,3 +130,4 @@
 .star-count {
   font-size: 2vh;
 }
+
