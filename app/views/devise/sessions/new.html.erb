@@ -2,13 +2,14 @@
 <%= form_with model: @user, url:user_session_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header2'>
+      
       <p>アカウントをお持ちでない方はこちら</p>
       
       <div>
-      <%= link_to users_path, class:"btn btn-c btn--green btn--cubic new-regi" do %>
+          <%= link_to users_path, class:"btn btn-c btn--green btn--cubic new-regi" do %>
           <span>新規会員登録</span>
           <% end %>
-          </div>
+        </div>
     </div>
   
   <div class='login-flash-message'>
