@@ -465,7 +465,7 @@ ul li {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 660px;
+  max-width: 975px;
   *zoom: 1;
 }
 
@@ -781,11 +781,12 @@ header.header .user_nav span {
   display: block;
   float: left;
   margin-left: 30px;
-  width: 150px;
+  width: 100px;
   height: 50px;
   font-size: 1em;
   cursor: pointer;
   position: relative;
+  margin-top: 5px;
 }
 
 header.header .user_nav span:after {

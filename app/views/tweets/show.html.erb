@@ -1,6 +1,6 @@
 <div class="contents row">
-      <div class="post-all">
-        <div class="contents-header">
+      <div class="post-all1">
+        <div class="contents-header1">
           <%= link_to "ユーザー名", "#"%>
            <div class="more">
 
@@ -15,7 +15,7 @@
            </div>
        </div>
         <%= link_to tweet_path(@tweet.id), class: 'item-img' do  %>
-          <%= image_tag @tweet.image   ,class: "content_post" %>
+          <%= image_tag @tweet.image   ,class: "content_post1" %>
         <% end %>  
       
        </div>
@@ -62,18 +62,30 @@
  </div>
 
  <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
+  <% if user_signed_in? %>
+  <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントを記入", rows: "3" %>
+        <%= form.submit "コメントする" %>
+      <% end %>
+    
       <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
         <br>
         不快な言葉遣いなどは利用制限や退会処分となることがあります。
       </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
+  
+    <% else %>
+     <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    </div>
   </div>
   <div class="links">
     <a href="#" class="change-item-btn">
