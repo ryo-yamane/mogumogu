@@ -22,3 +22,9 @@
   border-radius: 5px;
   
 }
+
+#child {
+  width: 33vh;
+  height: 33vh;
+  object-fit: contain;
+}
