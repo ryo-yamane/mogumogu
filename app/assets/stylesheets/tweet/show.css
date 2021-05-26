@@ -35,8 +35,8 @@
 
 .detail-table{
   background-color: #fff;
-  margin-left: -18px;
-  margin-top: 36px;
+  margin-left: -16px;
+  margin-top: 55px;
 }
 
 .report-flag-icon {
@@ -130,6 +130,17 @@
 .content_post1{
   display: inline-block;
   vertical-align: middle;
-  width: 500px;
-  height: 270px;
+ 
+  height: 270px!important;
 }
+
+.slider{
+ height: 275px;
+}
+
+.slick-arrow{
+  background-color: burlywood;
+  padding: 1px 0px 0px 0px;
+  margin: 0px -4px;
+}
+

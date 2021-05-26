@@ -4,7 +4,7 @@ class Tweet < ApplicationRecord
   belongs_to :company
   belongs_to :texture
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
   has_many :comments
 
   with_options numericality: { other_than: 1 } do
