@@ -14,10 +14,16 @@
              </ul>
            </div>
        </div>
-        <%= link_to tweet_path(@tweet.id), class: 'item-img' do  %>
-          <%= image_tag @tweet.image   ,class: "content_post1" %>
-        <% end %>  
-      
+       
+        <%# <%= image_tag @tweet.images[0]   ,class: "content_post1" %> 
+          
+          <div class="slider">
+             <% @images.each do |image|  %>
+             <%= image_tag image  ,class: "content_post1 " %>
+            <% end %>
+          </div>
+        
+       
        </div>
 
 
@@ -26,6 +32,10 @@
         <tr>
            <th class="detail-item">商品名</th>
            <td class="detail-value"><%= "#{@tweet.name}" %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">商品の感想</th>
+          <td class="detail-value"><%= "#{@tweet.text}" %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
@@ -96,5 +106,5 @@
     </a>
   </div>
   
- 
+
 </div>

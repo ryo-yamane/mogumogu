@@ -34,6 +34,7 @@ class TweetsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
+    @images = @tweet.images
   end
 
   def search
