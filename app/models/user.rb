@@ -5,9 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,:omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   
-  has_many :tweets
+  has_many :tweets , dependent: :destroy
   has_many :comments
   has_many :sns_credentials
+
+  has_many :likes, dependent: :destroy
+  has_many :like_tweets, through: :likes, source: :tweet
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
@@ -23,5 +26,21 @@ class User < ApplicationRecord
     sns.save
   end
   { user: user, sns: sns }
+  end
+
+  def own?(object)
+    id == object.user_id
+  end
+
+  def like(tweet)
+    likes.find_or_create_by(tweet: tweet)
+  end
+
+  def like?(tweet)
+    like_tweets.include?(tweet)
+  end
+
+  def unlike(tweet)
+    like_tweets.delete(tweet)
   end
 end

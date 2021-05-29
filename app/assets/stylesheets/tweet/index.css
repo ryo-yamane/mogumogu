@@ -128,6 +128,22 @@
 }
 
 .star-count {
-  font-size: 2vh;
+  font-size: 1vh;
+  margin: -1px 0px 1px -6px;
 }
 
+.like-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 13px;
+  color: #808080; 
+  margin-left: 20px;
+  }
+ 
+ .unlike-btn {
+  width: 25px;
+  height: 30px;
+  font-size: 13px;
+  margin-left: 20px;
+  }
+ 

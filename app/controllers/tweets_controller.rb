@@ -4,6 +4,8 @@ class TweetsController < ApplicationController
   
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC")
+    @likes = Like.all
+    
   end
 
   def new 

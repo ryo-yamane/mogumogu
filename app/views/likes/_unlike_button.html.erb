@@ -1,0 +1,5 @@
+<%# <%= link_to '詳細', tweet_path(tweet.id), method: :get %>
+<%= link_to like_path(current_user.likes.find_by(tweet: tweet)), method: :delete , remote: true do %>
+                   <i class="bi bi-heart-fill unlike-btn"></i>
+                   <%# ＃ハート（黒） %>
+                   <% end %>

@@ -62,8 +62,18 @@
 
  <div class="option">
       <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+        <% unless user_signed_in? && current_user == @tweet.user %>
+              <div class="like-link" id="like-link-<%= @tweet %>">
+                <%# <%= link_to '詳細', tweet_path(tweet.id), method: :get %>
+                  <% if current_user&.like?(@tweet)%> 
+                   <%# # すでにいいね！してるか確認 %> 
+                    <%= render 'likes/unlike_button', tweet: @tweet %> 
+                  <% else %>                  
+                    <%= render 'likes/like_button', tweet: @tweet %>
+                  <% end %>
+              </div>
+              <% end %>
+        <span> いいね！</span>
       </div>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>

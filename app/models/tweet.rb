@@ -6,6 +6,8 @@ class Tweet < ApplicationRecord
   belongs_to :user
   has_many_attached :images
   has_many :comments
+  has_many :likes , dependent: :destroy
+  has_many :users, through: :likes
 
   with_options numericality: { other_than: 1 } do
   validates :category_id
