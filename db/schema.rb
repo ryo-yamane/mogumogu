@@ -53,11 +53,11 @@ ActiveRecord::Schema.define(version: 2021_05_31_034721) do
 
   create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "follow_id"
+    t.bigint "follower_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["follow_id"], name: "index_relationships_on_follow_id"
-    t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+    t.index ["user_id", "follower_id"], name: "index_relationships_on_user_id_and_follower_id", unique: true
     t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
@@ -107,6 +107,6 @@ ActiveRecord::Schema.define(version: 2021_05_31_034721) do
   add_foreign_key "likes", "tweets"
   add_foreign_key "likes", "users"
   add_foreign_key "relationships", "users"
-  add_foreign_key "relationships", "users", column: "follow_id"
+  add_foreign_key "relationships", "users", column: "follower_id"
   add_foreign_key "sns_credentials", "users"
 end

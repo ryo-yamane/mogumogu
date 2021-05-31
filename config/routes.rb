@@ -11,7 +11,8 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :users, only: %i[index show]
+  resources :users, only: [:index, :show]
 
-  resources :likes, only: %i[create destroy]
+  resources :likes, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end
