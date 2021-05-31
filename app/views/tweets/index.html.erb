@@ -10,12 +10,21 @@
              <ul class="more_list">
               <li class="lint-content">
               <% if user_signed_in? && current_user == tweet.user%>
-               <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
-               <%= link_to '削除', tweet_path(tweet.id) , method: :delete%>
-               <% else %>
+                 <%= link_to '編集', edit_tweet_path(tweet.id), method: :get %>
+                 <%= link_to '削除', tweet_path(tweet.id) , method: :delete%>
+              <% elsif user_signed_in? %>
+              <div class="like-link" id="like-link-<%= tweet.id %>">
+                <%# <%= link_to '詳細', tweet_path(tweet.id), method: :get %>
+                  <% if current_user&.like?(tweet)%> 
+                   <%# # すでにいいね！してるか確認 %> 
+                    <%= render 'likes/unlike_button', tweet: tweet %> 
+                  <% else %>                  
+                    <%= render 'likes/like_button', tweet: tweet %>
+                  <% end %>
+              </div>
+              <% else %>
                 <%= link_to '詳細', tweet_path(tweet.id), method: :get %>
-
-               <% end %>
+              <% end %>
               </li>
              </ul>
            </div>
@@ -35,8 +44,21 @@
             <span><%= link_to "商品価格：#{tweet.price}円" %><br>
             <%= link_to "カテゴリ：#{tweet.category.name}" , tweet_path(tweet.id), method: :get %></span>
             <div class='star-btn'>
-              <%= image_tag "star.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
+              <i class="bi bi-heart-fill number-of-iine">
+              </i>
+              <span class='star-count' id="like-link">
+                <% arry = []%>
+                <% count = 0 %>
+                
+                <% @likes.each do |l|%>
+                  <% if tweet.id == l.tweet.id%>
+                    <% count += 1%>
+                  <% end %>
+                <% end %>
+                
+                <%= count %>  
+              
+              </span>
             </div>
           </div>
         </div>

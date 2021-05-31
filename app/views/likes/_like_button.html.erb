@@ -1,0 +1,7 @@
+<%# <%= link_to '詳細', tweet_path(tweet.id), method: :get %> 
+<%= link_to likes_path(tweet: tweet), method: :post, remote: true do %>
+                  <i class="bi bi-heart like-btn"></i>
+                  <%# # ハート（白） %>
+                  <% end %>
+
+                  

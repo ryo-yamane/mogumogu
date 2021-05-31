@@ -1,7 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbolinks:load', function() {
   if ( document.getElementById('item-image')){
     const ImageList = document.getElementById('image-list')
-
     // 選択した画像を表示する関数
     const createImageHTML = (blob) => {
        // 画像を表示するためのdiv要素を生成
