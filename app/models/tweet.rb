@@ -9,6 +9,8 @@ class Tweet < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes
 
+
+
   with_options numericality: { other_than: 1 } do
     validates :category_id
     validates :company_id
@@ -18,6 +20,7 @@ class Tweet < ApplicationRecord
   with_options presence: true do
     validates :text
     validates :name
+    validates :price, numericality: { greater_than_or_equal_to: 10, less_than: 300 }
   end
 
   def self.search(search)

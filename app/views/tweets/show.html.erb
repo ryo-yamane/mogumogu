@@ -1,7 +1,7 @@
 <div class="contents row">
       <div class="post-all1">
         <div class="contents-header1">
-          <%= link_to "ユーザー名", "#"%>
+          <%= link_to "投稿者：#{@tweet.user.nickname}", user_path(@tweet.user.id)%>
            <div class="more">
 
              <ul class="more_list">
